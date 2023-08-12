@@ -1,0 +1,22 @@
+{
+  "name": "discord-user-checker-app",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "author": "J_DDev <69683068+JayyDoesDev@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^25.5.0",
+    "less": "^4.2.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-watch-compiler": "^1.16.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && electron .",
+    "less": "less-watch-compiler"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}

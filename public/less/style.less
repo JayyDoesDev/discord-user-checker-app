@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Indie Flower');
+
+@backgroundColor: #15171a;
+@mainColor: pink;
+
+body {
+    background-color: @backgroundColor;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Pacifico';
+    overflow: normal;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+    @media (max-width: 768px) {
+        overflow: hidden;
+    }
+}
+
+.container {
+    color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.icon-container {
+    line-height: 1px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 100px;
+    overflow: hidden;
+    a {
+        padding-left: 5px;
+        margin: 0 10px;
+        &:hover {
+            filter: none;
+        }
+    }
+}
+
+.icon {
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+    float: left;
+    position: absolute;
+    img {
+        color: white;
+        filter: brightness(0) invert(0.3);
+        width: 40px;
+        padding-right: 10px;
+        transition: 0.4s;
+    }
+}
+
+.box {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: #111214;
+    padding: 10px;
+    padding-bottom: 0;
+    border-width: 12px;
+    width: 80%;
+    max-width: 600px;
+    line-height: 1.2;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+
+.profile {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.pic {
+    width: 128px;
+    height: 130px;
+    border-radius: 100%;
+    border: 4px solid @mainColor;
+    transition: 0.4s;
+}
+
+.user-box {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-top: 10px; 
+    p {
+        margin: auto;
+    }
+}
+
+#user-flags {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
