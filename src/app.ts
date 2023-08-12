@@ -9,16 +9,14 @@ function createWindow(): void {
         height: config.height,
         minimizable: config.minimizable,
         frame: config.frame,
+        movable: true,
         webPreferences: {
             preload: config.webPreferences.preload
         }
     });
     win.loadFile(process.cwd() + "/public/index.html");
     rpc.login({ clientId: RPCConfig.id });
-    rpc.on("ready", () => {
-        console.log("RPC is ready. Now launching...")
-        activiateRPC();
-    });
+    rpc.on("ready", () => activiateRPC());
 
     ipcMain.on("close", () => {
         rpc.clearActivity();

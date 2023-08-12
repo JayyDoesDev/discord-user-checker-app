@@ -1,290 +1,309 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-@import url('https://fonts.googleapis.com/css?family=Indie Flower');
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Indie Flower");
 
 @backgroundColor: #15171a;
 @mainColor: pink;
-@blurpleColor: #7289DA;
-@mainFont: 'Pacifico';
-@secondFont: 'Indie Flower';
+@blurpleColor: #7289da;
+@mainFont: "Pacifico";
+@secondFont: "Indie Flower";
 
 body {
-    background-color: @backgroundColor;
-    justify-content: center;
-    text-align: center;
-    font-family: @mainFont;
-    overflow: hidden;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    *::-webkit-scrollbar {
-        display: none;
-      }
-    @media (max-width: 768px) {
-        overflow: visible;
-    }
+  background-color: @backgroundColor;
+  justify-content: center;
+  text-align: center;
+  font-family: @mainFont;
+  overflow: hidden;
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    overflow: visible;
+  }
 }
 .container {
-    color: @mainColor;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 60px;
+  color: @mainColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 60px;
 }
 
 .tab-bar {
-    color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: auto;
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-    a {
-        text-align: center;
-    }
-    p {
-        padding-left: 5px;
-        margin: 0 10px;
-    }
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: auto;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  a {
+    text-align: center;
+  }
+  p {
+    padding-left: 5px;
+    margin: 0 10px;
+  }
 
-    #tab-bar-close {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: 0.4s;
-        margin-right: auto;
-        &:hover {
-            background-color: red;
-        }
+  #tab-bar-close {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.4s;
+    margin-right: auto;
+    &:hover {
+      background-color: red;
     }
+  }
 
-    #tab-bar-minimize {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        transition: 0.4s;
-        margin-right: auto;
-        &:hover {
-            background-color: orange;
-        }
+  #tab-bar-minimize {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: 0.4s;
+    margin-right: auto;
+    &:hover {
+      background-color: orange;
     }
+  }
 
-    #tab-bar-maximize {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        transition: 0.4s;
-        margin-right: auto;
-        &:hover {
-            background-color: green;
-        }
+  #tab-bar-maximize {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: 0.4s;
+    margin-right: auto;
+    &:hover {
+      background-color: green;
     }
+  }
 }
 
-
 .icon-container a :hover {
-    filter: none;
-} 
+  filter: none;
+}
 
 .icon-container {
-    line-height: 1px;
-    margin-left: auto;
-    margin-top: 10px;
-    margin-right: 100px;
-    overflow: hidden;
-    a {
-        padding-left: 5px;
-        margin: 0 10px;
-    }
-    @media (max-width: 768px) {
-        display: none;
-    }
+  line-height: 1px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 100px;
+  overflow: hidden;
+  a {
+    padding-left: 5px;
+    margin: 0 10px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .icon-mobile-container {
-    display: none;
-    @media (max-width: 768px) {
-        text-align: center;
-        display: contents;
-        line-height: 110px;
-        overflow: hidden;
-        a {
-            margin-left: 100px;
-            margin: auto;
-            &:hover {
-                filter: none;
-            }
-        }
-
-        img {
-            text-align: center;
-        }
+  text-align: center;
+  display: contents;
+  line-height: 110px;
+  overflow: hidden;
+  a {
+    margin-left: 24px;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    display: contents;
+    line-height: 110px;
+    overflow: hidden;
+    a {
+      margin-left: 100px;
+      margin: auto;
+      &:hover {
+        filter: none;
+      }
     }
+
+    img {
+      text-align: center;
+    }
+  }
+}
+
+#japi-logo {
+    width: 100px;
+    margin-left: -100px;
+    margin-right: 300px;
+    transition: 0.4s;
+    &:hover {
+        filter: none;
+    }
+  @media (max-width: 768px) {
+    padding-right: 40px;
+    margin-right: -30px;
+    width: 100px;
+  }
 }
 
 #github-effect {
-    transition: 0.4s;
-    &:hover {
-        filter: brightness(0) invert(1);
-    }
+  transition: 0.4s;
+  &:hover {
+    filter: brightness(0) invert(1);
+  }
 }
 
 .icon {
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
+  margin-left: auto;
+  float: left;
+  position: absolute;
+  img {
     color: white;
-    margin-left: auto;
-    float: left;
-    position: absolute;
-    img {
-        color: white;
-        filter: brightness(0) invert(0.3);
-        width: 40px;
-        padding-right: 10px;
-        transition: 0.4s;
-    }
-    @media (max-width: 768px) {
-        float: none;
-        position: relative;
-    }
+    filter: brightness(0) invert(0.3);
+    width: 40px;
+    padding-right: 10px;
+    transition: 0.4s;
+  }
+  @media (max-width: 768px) {
+    float: none;
+    position: relative;
+  }
 }
 
 .box {
-    border-style: solid;
-    border-radius: 10px;
-    border-color: transparent;
-    background-color: #111214;
-    padding: 10px;
-    padding-bottom: 0;
-    border-width: 12px;
-    width: 80%;
-    max-width: 600px;
-    line-height: 1.2;
-    margin-top: 20px;
-    transition: 0.4s;
-    &:hover {
-        color: white;
-        background-color: @blurpleColor;
-        .pic {
-            border-color: white;
-        }
+  border-style: solid;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: #111214;
+  padding: 10px;
+  padding-bottom: 0;
+  border-width: 12px;
+  width: 80%;
+  max-width: 600px;
+  line-height: 1.2;
+  margin-top: 20px;
+  transition: 0.4s;
+  &:hover {
+    color: white;
+    background-color: @blurpleColor;
+    .pic {
+      border-color: white;
     }
+  }
 }
 
 input {
-    background-color: #111214;
-    border-color: transparent;
-    border-radius: 10px;
-    color: @mainColor;
-    width: 100%;
-    max-width: 300px;
-    padding: 12px;
-    box-sizing: border-box;
+  background-color: #111214;
+  border-color: transparent;
+  border-radius: 10px;
+  color: @mainColor;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
-input[type=text] {
-    &:focus {
-        outline: 2px solid @mainColor;
-    }
+input[type="text"] {
+  &:focus {
+    outline: 2px solid @mainColor;
+  }
 }
 
 .profile {
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .pic {
-    width: 128px;
-    height: 130px;
-    border-radius: 100%;
-    border: 4px solid @mainColor;
-    transition: 0.4s;
+  width: 128px;
+  height: 130px;
+  border-radius: 100%;
+  border: 4px solid @mainColor;
+  transition: 0.4s;
 }
 
 .user-box {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    margin-top: 10px; 
-    p {
-        margin: auto;
-    }
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  margin-top: 10px;
+  p {
+    margin: auto;
+  }
 }
 
 #user-flags {
-    word-break: break-word;
-    overflow-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .button {
-    text-align: center;
-    font-family: @mainFont;
-    background-color: #111214;
-    border-color: transparent;
-    border-radius: 10px;
-    border-radius:6px;
-    padding: 20px;
-    transition: 0.4s;
-    width: 100px;
-    max-width: 300px;
-    margin: auto;
-    margin-top: 12px;
-    &:hover {
-        color: white;
-        background-color: @blurpleColor;
-    }
+  text-align: center;
+  font-family: @mainFont;
+  background-color: #111214;
+  border-color: transparent;
+  border-radius: 10px;
+  border-radius: 6px;
+  padding: 20px;
+  transition: 0.4s;
+  width: 100px;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 12px;
+  &:hover {
+    color: white;
+    background-color: @blurpleColor;
+  }
 }
 
 .lookup-container {
-    font-family: @secondFont;
-    margin-top: 20px;
-    margin-bottom: auto;
-    width: 80%;
-    max-width: 600px;
+  font-family: @secondFont;
+  margin-top: 20px;
+  margin-bottom: auto;
+  width: 80%;
+  max-width: 600px;
 }
 
 .status-container {
-    position: relative;
-    width: 128px;
-    height: 130px;
+  position: relative;
+  width: 128px;
+  height: 130px;
 }
 
 #status {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-color: transparent;
-    border-radius: 50%;
-    z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-color: transparent;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .instruction {
-    line-height: 10px;
-    color: @mainColor;
+  line-height: 10px;
+  color: @mainColor;
 }
 
 .footer {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    background-color: #111214;
-    position: fixed;
-    bottom: 0;
-    color: @mainColor;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #111214;
+  position: fixed;
+  bottom: 0;
+  color: @mainColor;
 }
 
 .duc {
-    @media (max-width: 768px) {
-        font-size: 20px;
-    }
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 }
-
