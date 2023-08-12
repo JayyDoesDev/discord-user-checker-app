@@ -3,6 +3,7 @@
 
 @backgroundColor: #15171a;
 @mainColor: pink;
+@blurpleColor: #7289DA;
 
 body {
     background-color: @backgroundColor;
@@ -43,6 +44,27 @@ body {
     }
 }
 
+.icon-mobile-container {
+    display: none;
+    @media (max-width: 768px) {
+        text-align: center;
+        display: contents;
+        line-height: 100px;
+        overflow: hidden;
+        a {
+            margin-left: 100px;
+            margin: auto;
+            &:hover {
+                filter: none;
+            }
+        }
+
+        img {
+            text-align: center;
+        }
+    }
+}
+
 .icon {
     text-decoration: none;
     color: white;
@@ -71,6 +93,30 @@ body {
     line-height: 1.2;
     margin-top: 20px;
     transition: 0.4s;
+    &:hover {
+        color: white;
+        background-color: @blurpleColor;
+        .pic {
+            border-color: white;
+        }
+    }
+}
+
+input {
+    background-color: #111214;
+    border-color: transparent;
+    border-radius: 10px;
+    color: pink;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+input[type=text] {
+    &:focus {
+        outline: 2px solid pink;
+    }
 }
 
 .profile {

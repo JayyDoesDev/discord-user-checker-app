@@ -1,11 +1,10 @@
 import { app, BrowserWindow } from "electron";
 import { config } from "./config";
-function createWindow() {
+function createWindow(): void {
     const win: BrowserWindow = new BrowserWindow({
         width: config.width,
         height: config.height
     });
-    console.log(process.cwd())
     win.loadFile(process.cwd() + "/public/index.html");
 }
 
