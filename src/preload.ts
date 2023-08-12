@@ -1,10 +1,9 @@
 import { ipcRenderer } from "electron";
 
 window.addEventListener('DOMContentLoaded', () => {
-    const closeButton = document.getElementById('tab-bar-close');
-    const minimizeButton = document.getElementById('tab-bar-minimize');
-    const maximizeButton = document.getElementById('tab-bar-maximize');
-
+    const closeButton: Element = document.getElementById('tab-bar-close');
+    const minimizeButton: Element = document.getElementById('tab-bar-minimize');
+    const maximizeButton: Element = document.getElementById('tab-bar-maximize');
     closeButton.addEventListener('click', () => {
         ipcRenderer.send('close');
     });
@@ -17,3 +16,4 @@ window.addEventListener('DOMContentLoaded', () => {
         ipcRenderer.send('maximize');
     });
 });
+

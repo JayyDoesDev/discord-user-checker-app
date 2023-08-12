@@ -1,5 +1,8 @@
 import { app, BrowserWindow, ipcMain, IpcMain } from "electron";
 import { config } from "./config";
+import { Client as RPCClient } from "discord-rpc";
+import { RPCConfig } from "./config";
+const rpc: RPCClient = new RPCClient({ transport: "ipc" })
 function createWindow(): void {
     const win: BrowserWindow = new BrowserWindow({
         width: config.width,
@@ -11,8 +14,14 @@ function createWindow(): void {
         }
     });
     win.loadFile(process.cwd() + "/public/index.html");
+    rpc.login({ clientId: RPCConfig.id });
+    rpc.on("ready", () => {
+        console.log("RPC is ready. Now launching...")
+        activiateRPC();
+    });
 
     ipcMain.on("close", () => {
+        rpc.clearActivity();
         win.close();
     });
 
@@ -37,3 +46,15 @@ app.whenReady().then(() => {
         };
     });
 });
+
+function activiateRPC(): void {
+    rpc.setActivity({
+        state: RPCConfig.state,
+        startTimestamp: RPCConfig.startTimestamp,
+        largeImageKey: RPCConfig.largeImageKey,
+        largeImageText: RPCConfig.larageImageText,
+        smallImageKey: RPCConfig.smallImageKey,
+        smallImageText: RPCConfig.smallImageText,
+        buttons: RPCConfig.buttons,
+    })
+}

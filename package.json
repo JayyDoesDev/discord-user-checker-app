@@ -5,6 +5,8 @@
   "author": "J_DDev <69683068+JayyDoesDev@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/discord-rpc": "^4.0.5",
+    "discord-rpc": "^4.0.1",
     "electron": "^25.5.0",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.5.1",
