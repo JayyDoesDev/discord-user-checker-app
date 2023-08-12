@@ -4,30 +4,40 @@
 @backgroundColor: #15171a;
 @mainColor: pink;
 @blurpleColor: #7289DA;
+@mainFont: 'Pacifico';
+@secondFont: 'Indie Flower';
 
 body {
     background-color: @backgroundColor;
     justify-content: center;
     text-align: center;
-    font-family: 'Pacifico';
-    overflow: normal;
+    font-family: @mainFont;
+    overflow: hidden;
     white-space: normal;
     margin: 0;
     padding: 0;
+    *::-webkit-scrollbar {
+        display: none;
+      }
     @media (max-width: 768px) {
-        overflow: hidden;
+        overflow: visible;
     }
 }
 
 .container {
-    color: pink;
+    color: @mainColor;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+
     padding-bottom: 60px;
 }
+
+
+.icon-container a :hover {
+    filter: none;
+} 
 
 .icon-container {
     line-height: 1px;
@@ -38,9 +48,9 @@ body {
     a {
         padding-left: 5px;
         margin: 0 10px;
-        &:hover {
-            filter: none;
-        }
+    }
+    @media (max-width: 768px) {
+        display: none;
     }
 }
 
@@ -49,7 +59,7 @@ body {
     @media (max-width: 768px) {
         text-align: center;
         display: contents;
-        line-height: 100px;
+        line-height: 110px;
         overflow: hidden;
         a {
             margin-left: 100px;
@@ -65,6 +75,13 @@ body {
     }
 }
 
+#github-effect {
+    transition: 0.4s;
+    &:hover {
+        filter: brightness(0) invert(1);
+    }
+}
+
 .icon {
     text-decoration: none;
     color: white;
@@ -77,6 +94,10 @@ body {
         width: 40px;
         padding-right: 10px;
         transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+        float: none;
+        position: relative;
     }
 }
 
@@ -106,7 +127,7 @@ input {
     background-color: #111214;
     border-color: transparent;
     border-radius: 10px;
-    color: pink;
+    color: @mainColor;
     width: 100%;
     max-width: 300px;
     padding: 12px;
@@ -115,7 +136,7 @@ input {
 
 input[type=text] {
     &:focus {
-        outline: 2px solid pink;
+        outline: 2px solid @mainColor;
     }
 }
 
@@ -148,3 +169,70 @@ input[type=text] {
     word-break: break-word;
     overflow-wrap: break-word;
 }
+
+.button {
+    text-align: center;
+    font-family: @mainFont;
+    background-color: #111214;
+    border-color: transparent;
+    border-radius: 10px;
+    border-radius:6px;
+    padding: 20px;
+    transition: 0.4s;
+    width: 100px;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 12px;
+    &:hover {
+        color: white;
+        background-color: @blurpleColor;
+    }
+}
+
+.lookup-container {
+    font-family: @secondFont;
+    margin-top: 20px;
+    margin-bottom: auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.status-container {
+    position: relative;
+    width: 128px;
+    height: 130px;
+}
+
+#status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-color: transparent;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.instruction {
+    line-height: 10px;
+    color: @mainColor;
+}
+
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #111214;
+    position: fixed;
+    bottom: 0;
+    color: @mainColor;
+}
+
+.duc {
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
