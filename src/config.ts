@@ -1,10 +1,12 @@
 interface IConfig {
     width: number;
     height: number;
+    icon: string;
     minimizable: boolean;
     frame: boolean;
     webPreferences: {
         preload: string;
+        devTools: boolean;
     }
 }
 
@@ -27,10 +29,12 @@ interface IRPCButton {
 export const config: IConfig = {
     width: 1000,
     height: 1000,
+    icon: process.cwd() + "/public/assets/rose.ico",
     minimizable: true,
     frame: false,
     webPreferences: {
-        preload: process.cwd() + "/dist/preload.js"
+        preload: process.cwd() + "/dist/preload.js",
+        devTools: false
     }
 }
 
@@ -46,6 +50,10 @@ export const RPCConfig: IRPCConfig = {
         {
             label: "Check it out!",
             url: "https://duc.jddev.wtf"
+        },
+        {
+            label: "Download",
+            url: ""
         }
     ]
 }

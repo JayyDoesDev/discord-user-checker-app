@@ -1,3 +1,6 @@
+require("../assets/")
+
+
 async function submit() {
     var input = document.querySelector("input").value;
     if (input) {

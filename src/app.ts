@@ -7,11 +7,13 @@ function createWindow(): void {
     const win: BrowserWindow = new BrowserWindow({
         width: config.width,
         height: config.height,
+        icon: config.icon,
         minimizable: config.minimizable,
         frame: config.frame,
         movable: true,
         webPreferences: {
-            preload: config.webPreferences.preload
+            preload: config.webPreferences.preload,
+            devTools: config.webPreferences.devTools
         }
     });
     win.loadFile(process.cwd() + "/public/index.html");
