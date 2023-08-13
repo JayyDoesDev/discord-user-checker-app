@@ -10,7 +10,6 @@ function createWindow(): void {
         icon: config.icon,
         minimizable: config.minimizable,
         frame: config.frame,
-        movable: true,
         webPreferences: {
             preload: config.webPreferences.preload,
             devTools: config.webPreferences.devTools

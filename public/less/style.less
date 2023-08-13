@@ -36,15 +36,16 @@ body {
   -webkit-app-region: drag;
   margin: auto;
   width: 100%;
+  height: auto;
   background-color: #111214;
   margin-left: auto;
   margin-right: 30px;
   display: flex;
   align-items: center;
-  pointer-events: auto;
 }
 
 .tab-bar {
+  -webkit-app-region: no-drag;
   color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-left: auto;
@@ -53,11 +54,9 @@ body {
   align-items: center;
   padding-top: 10px;
   position: relative;
-  z-index: 3;
-  a {
-    text-align: center;
-  }
+  z-index: 1;
   p {
+    pointer-events: visible;
     padding-left: 5px;
     margin: 0 10px;
     position: relative;
@@ -73,7 +72,6 @@ body {
     display: inline-block;
     transition: 0.4s;
     margin-right: auto;
-    z-index: 2;
     &:hover {
       background-color: red;
     }
@@ -87,7 +85,6 @@ body {
     border-radius: 50%;
     transition: 0.4s;
     margin-right: auto;
-    z-index: 2;
     &:hover {
       background-color: orange;
     }
@@ -101,7 +98,6 @@ body {
     border-radius: 50%;
     transition: 0.4s;
     margin-right: auto;
-    z-index: 2;
     &:hover {
       background-color: green;
     }
@@ -157,30 +153,30 @@ body {
 }
 
 #japi-logo {
+  width: 100px;
+  margin-left: -100px;
+  margin-right: 300px;
+  transition: 0.4s;
+  &:hover {
+    filter: none;
+  }
+  @media (max-width: 768px) {
+    padding-right: 40px;
+    margin-right: -40px;
     width: 100px;
-    margin-left: -100px;
-    margin-right: 300px;
-    transition: 0.4s;
-    &:hover {
-        filter: none;
-    }
-    @media (max-width: 768px) {
-      padding-right: 40px;
-      margin-right: -40px;
-      width: 100px;
-    }
+  }
 }
 
 #github-logo {
   width: 100px;
   transition: 0.4s;
   &:hover {
-      filter: none;
+    filter: none;
   }
-@media (max-width: 768px) {
-  padding: auto;
-  width: 100px;
-}
+  @media (max-width: 768px) {
+    padding: auto;
+    width: 100px;
+  }
 }
 
 #github-effect {
