@@ -52,13 +52,16 @@ body {
   display: flex;
   align-items: center;
   padding-top: 10px;
+  position: relative;
+  z-index: 3;
   a {
     text-align: center;
   }
   p {
     padding-left: 5px;
     margin: 0 10px;
-    pointer-events: none;
+    position: relative;
+    z-index: 4;
   }
 
   #tab-bar-close {
@@ -138,8 +141,10 @@ body {
     line-height: 110px;
     overflow: hidden;
     a {
-      margin-left: 100px;
-      margin: auto;
+      margin-left: 30px;
+      margin-right: 10px;
+      padding: auto;
+      position: absolute;
       &:hover {
         filter: none;
       }
@@ -159,11 +164,23 @@ body {
     &:hover {
         filter: none;
     }
-  @media (max-width: 768px) {
-    padding-right: 40px;
-    margin-right: -30px;
-    width: 100px;
+    @media (max-width: 768px) {
+      padding-right: 40px;
+      margin-right: -40px;
+      width: 100px;
+    }
+}
+
+#github-logo {
+  width: 100px;
+  transition: 0.4s;
+  &:hover {
+      filter: none;
   }
+@media (max-width: 768px) {
+  padding: auto;
+  width: 100px;
+}
 }
 
 #github-effect {
