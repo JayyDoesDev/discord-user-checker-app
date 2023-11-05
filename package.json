@@ -1,23 +1,51 @@
 {
   "name": "discord-user-checker-app",
   "version": "1.0.0",
-  "main": "dist/app.js",
+  "main": "build/app.js",
   "author": "J_DDev <69683068+JayyDoesDev@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
     "@types/discord-rpc": "^4.0.5",
     "discord-rpc": "^4.0.1",
-    "electron": "^25.5.0",
+    "gulp": "^4.0.2",
+    "gulp-copy": "^4.0.1",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.5.1",
     "less-watch-compiler": "^1.16.3"
   },
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && electron .",
-    "less": "less-watch-compiler"
+    "start": "yarn build && yarn gulp && electron .",
+    "less": "less-watch-compiler",
+    "eb": "electron-builder",
+    "postinstall": "yarn build",
+    "gulp": "gulp public"
+  },
+  "build": {
+    "files": [
+      "dist/**/*",
+      "public/**/*",
+      "build/**/*",
+      "package.json"
+    ],
+    "appId": "discord-user-checker",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "public/assets/rose.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "public/assets/rose.ico",
+      "uninstallerIcon": "public/assets/rose.ico",
+      "uninstallDisplayName": "discord-user-checker",
+      "license": "LICENSE"
+    }
   },
   "devDependencies": {
+    "electron": "^25.5.0",
+    "electron-builder": "^24.6.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }

@@ -1,7 +1,9 @@
-import { app, BrowserWindow, ipcMain, IpcMain } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import { config } from "./config";
 import { Client as RPCClient } from "discord-rpc";
 import { RPCConfig } from "./config";
+import path from "path";
+import url from "url";
 const rpc: RPCClient = new RPCClient({ transport: "ipc" })
 function createWindow(): void {
     const win: BrowserWindow = new BrowserWindow({
@@ -15,8 +17,13 @@ function createWindow(): void {
             devTools: config.webPreferences.devTools
         }
     });
-    win.loadFile(process.cwd() + "/public/index.html");
-    rpc.login({ clientId: RPCConfig.id });
+   // win.loadFile(process.cwd() + "/public/index.html");
+   win.loadURL(url.format({
+    pathname: path.join(__dirname, '/public/index.html'),
+    protocol: 'file:',
+    slashes: true
+   })) 
+   rpc.login({ clientId: RPCConfig.id });
     rpc.on("ready", () => activiateRPC());
 
     ipcMain.on("close", () => {

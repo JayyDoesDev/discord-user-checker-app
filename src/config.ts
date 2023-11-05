@@ -33,7 +33,7 @@ export const config: IConfig = {
     minimizable: true,
     frame: false,
     webPreferences: {
-        preload: process.cwd() + "/dist/preload.js",
+        preload: process.cwd() + "/build/preload.js",
         devTools: false
     }
 }
@@ -49,11 +49,7 @@ export const RPCConfig: IRPCConfig = {
     buttons: [
         {
             label: "Check it out!",
-            url: "https://duc.jddev.wtf"
+            url: "https://thisgoestonothinglolololl.goof"
         },
-        {
-            label: "Download",
-            url: ""
-        }
     ]
 }
